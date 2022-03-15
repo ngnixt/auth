@@ -14,10 +14,7 @@ import { BaseDirective } from './base.directive';
 @Directive({
   selector: '[authorize]',
 })
-export class AuthorizeDirective
-  extends BaseDirective
-  implements OnInit, OnDestroy
-{
+export class AuthorizeDirective extends BaseDirective implements OnInit {
   constructor(
     @Inject(AUTH_OPTION) option: AuthOption,
     vf: ViewContainerRef,
@@ -25,6 +22,12 @@ export class AuthorizeDirective
     templateRef: TemplateRef<unknown>
   ) {
     super(option, vf, cf, templateRef);
+
+    if (!this.option.isAuthorized) {
+      throw new Error(
+        'you need to add isAuthorized condition for authorizeDirective to work'
+      );
+    }
   }
 
   ngOnInit(): void {

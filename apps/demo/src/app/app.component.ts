@@ -16,4 +16,12 @@ export class AppComponent {
   logOut() {
     this.userService.logOut();
   }
+
+  setAdminPermission() {
+    this.userService.setAdminPermission();
+  }
+
+  unsetAdminPermission() {
+    this.userService.unsetAdminPermission();
+  }
 }
