@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'auth-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'demo';
+  constructor(private userService: UserService) {}
+
+  logIn() {
+    this.userService.logIn();
+  }
+
+  logOut() {
+    this.userService.logOut();
+  }
 }

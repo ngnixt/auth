@@ -12,4 +12,8 @@ export class UserService {
   logIn() {
     this._isAuthorized$.next(true);
   }
+
+  logOut() {
+    this._isAuthorized$.next(false);
+  }
 }
