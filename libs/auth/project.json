@@ -2,7 +2,7 @@
   "projectType": "library",
   "root": "libs/auth",
   "sourceRoot": "libs/auth/src",
-  "prefix": "auth",
+  "prefix": "",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
