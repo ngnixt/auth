@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthDirective } from './auth.directive';
 import { PermissionDirective } from './permission.directive';
+import { AuthorizeDirective } from './authorize.directive';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [AuthDirective, PermissionDirective],
-  exports: [AuthDirective, PermissionDirective],
+  declarations: [PermissionDirective, AuthorizeDirective],
+  exports: [PermissionDirective, AuthorizeDirective],
 })
 export class AuthModule {}
