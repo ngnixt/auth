@@ -3,7 +3,7 @@
 <button (click)="logOut()">Log Out</button>
 
 <div style="margin-top: 40px">
-  <h1 *permission="['admin']">Has Admin Permission</h1>
+  <h1 *hasAccess="['admin']">Has Admin Permission</h1>
 
   <button (click)="setAdminPermission()">Set Admin Permission</button>
   <button (click)="unsetAdminPermission()">Unset Admin Permission</button>

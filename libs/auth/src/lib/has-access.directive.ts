@@ -14,11 +14,11 @@ import { AUTH_OPTION, AuthOption } from './auth-options';
 import { BaseDirective } from './base.directive';
 
 @Directive({
-  selector: '[permission]',
+  selector: '[hasAccess]',
 })
-export class PermissionDirective extends BaseDirective implements OnChanges {
+export class HasAccessDirective extends BaseDirective implements OnChanges {
   @Input()
-  permission!: string[];
+  hasAccess!: unknown[];
 
   constructor(
     @Inject(AUTH_OPTION) option: AuthOption,
@@ -40,7 +40,7 @@ export class PermissionDirective extends BaseDirective implements OnChanges {
       this.sub = new Subscription();
     }
 
-    const hasPermission = this.option.hasPermission(this.permission);
+    const hasPermission = this.option.hasPermission(this.hasAccess);
     if (isObservable(hasPermission)) {
       this.sub = hasPermission.subscribe((hasPermission) => {
         this.toggleDisplay(hasPermission);
